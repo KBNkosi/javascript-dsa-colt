@@ -8,8 +8,12 @@ function collectOddValues(arr){
     if(arr[0] % 2 !== 0){
         newArr.push(arr[0]);
     }
+    console.log(newArr);
+    
         
     newArr = newArr.concat(collectOddValues(arr.slice(1)));
+    console.log(newArr);
+    
     return newArr;
 }
 
