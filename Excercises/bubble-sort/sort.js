@@ -1,23 +1,29 @@
-// Write a function that takes two parameters=> array and a callback function(optional) that can be used for comparing values
-// The comparison function will take two values from the array and compare them
-// The default comparison function should assume that the two parameters are numbers
-// And that the values are being sorted from smallest to largest.
+/**
+ * Requirements
+ * 1. Create a bubbleSort function that will sort values in an array
+ *   > The BubbleSort function should take 2 parameters:
+ *      > An array
+ *      > Optional comparator function
+ *        > Should be a callback function
+ *        > It should take two values from the array and compare them
+ *        > It should return:
+ *          > -1 if value 1 less than value 2
+ *          >  1 if value 1 greater than value 2
+ *          >  0 if both values are equal
+ *
+ * 2. The Optional comparator function should be in two states:
+ *   > Default state:
+ *     > Assume integer parameters
+ *     > sort from smallest to largest (ascending order)
+ *   > Custom state:
+ *     > Parameters can be of any data type
+ *       > strings, objects etc.
+ *       > sorting can be smallest to largest or largest to smallest(ascending or descending)
+ */
 
-// Q = Are we only comparing the two values provided in the comparator function or the entire values in the array
-// The bubble sort array returns the sorted array, what do we do with the return of the comparison function
-//  The function returns a negative value if the first value is less than the second, a positive value if the first value is greater than the second, and 0 if both values are equal.
-
-function compare(val, val2) {
-    if(val <val2) {
-        return -1;
-    } else if(val >val2){
-        return 1;
-    } else{
-        return 0;
-    }
-}
-
-// function bubbleSort(arr,cb) {
+ // Simple sorting with default comparator
+// function bubbleSort(arr, comparator) {
+//   if(arr.length===0) return [];
 //   let noSwaps;
 //   for (let i = arr.length; i > 0; i--) {
 //     noSwaps = true;
@@ -27,31 +33,13 @@ function compare(val, val2) {
 //         noSwaps = false;
 //       }
 //     }
-
 //     if (noSwaps) break;
 //   }
-
 //   return arr;
 // }
 
-function bubbleSort(arr,comparator) {
-    if(typeof comparator !== "function"){
-        return "Not a function";
-    }
-  let noSwaps;
-  for (let i = arr.length; i > 0; i--) {
-    noSwaps = true;
-    for (let j = 0; j < i - 1; j++) {
-      let result=comparator(arr[j], array[j+1]);
-      console.log(result);
-      if(result >=1){
-        [arr[j],arr[j+1]]=[arr[j+1],arr[j]]
-      }
-      
-    }
+// console.log(bubbleSort([5,4,-3,2,1,0]));
 
-    if (noSwaps) break;
-  }
 
-  return arr;
-}
+// sorting with strings
+
