@@ -25,10 +25,10 @@ function selectionSort(arr) {
       if (arr[j] < arr[min]) {
         min = j;
       }
+    }
 
-      if (j === arr.length - 1) {
-        [arr[i], arr[min]] = [arr[min], arr[i]];
-      }
+    if (i !== min) {
+      [arr[i], arr[min]] = [arr[min], arr[i]];
     }
   }
 
