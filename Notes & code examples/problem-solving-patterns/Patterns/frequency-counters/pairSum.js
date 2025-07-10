@@ -1,17 +1,16 @@
-const pairSum = (numbers, targetSum) => {
-  // todo
-  let previous={};
+var twoSum = function(nums, target) {
+    previous={};
 
-  for(let i=0; i<numbers.length; i++){
-    let complement = targetSum - numbers[i];
-    if(!(complement in previous)){
-      previous[numbers[i]]=i;
-    } else{
-      return [previous[complement], i]
+    for(let i=0; i<nums.length; i++){
+        let complement=target - nums[i]
+        if(complement in previous){
+            return [previous[complement], i]
+        }
+
+        previous[nums[i]]=i; 
+
+        console.log(previous)
     }
-    
-  }
-  return previous;
 };
 
- console.log(pairSum([3,2,5,4,1], 8))
+console.log(twoSum([2,7,11,15],9))
